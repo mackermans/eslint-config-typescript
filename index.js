@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const prettierConfig = require('./.prettierrc.js')
+
 module.exports = {
   env: {
     es6: true,
@@ -34,5 +37,6 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
     '@typescript-eslint/no-use-before-define': ['warn'],
+    'prettier/prettier': ['error', prettierConfig],
   },
 }
