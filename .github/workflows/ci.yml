@@ -1,4 +1,4 @@
-name: Lint
+name: CI
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,3 +22,12 @@ jobs:
 
     - name: Lint files
       run: yarn eslint .
+
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Semantic Releaser
+      uses: brpaz/action-semantic-release@v1
