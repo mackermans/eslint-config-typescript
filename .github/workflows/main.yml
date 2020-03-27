@@ -1,0 +1,18 @@
+name: Lint
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run ESLint
+      uses: stefanoeb/eslint-action@1.0.2
+      with:
+        # Blob of files to lint
+        files: .
