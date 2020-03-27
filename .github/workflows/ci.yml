@@ -31,6 +31,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        
+    - name: Install dependencies
+      run: yarn --frozen-lockfile
+
     - name: Semantic Releaser
       uses: brpaz/action-semantic-release@v1
       env:
