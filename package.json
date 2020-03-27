@@ -1,6 +1,6 @@
 {
   "name": "@mackermans/eslint-config-typescript",
-  "version": "1.0.0",
+  "version": "0.0.0-semantic-released",
   "main": "index.js",
   "author": "Maarten Ackermans <maarten.ackermans@gmail.com>",
   "license": "MIT",
