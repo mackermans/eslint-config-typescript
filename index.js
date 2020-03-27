@@ -9,6 +9,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
@@ -20,9 +21,12 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
+    ecmaFeatures: {
+      jsx: true,
+    },
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
     'quote-props': ['error', 'as-needed'],
     'comma-dangle': ['error', 'always-multiline'],
@@ -38,5 +42,10 @@ module.exports = {
     semi: ['error', 'never'],
     '@typescript-eslint/no-use-before-define': ['warn'],
     'prettier/prettier': ['error', prettierConfig],
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 }
